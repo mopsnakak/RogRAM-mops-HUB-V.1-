@@ -130,7 +130,7 @@ GiftsTab:CreateToggle({
 
 local basketToggle = false
 GiftsTab:CreateToggle({
-    Name = "Spring Basket spam buy ",
+    Name = "spam buy Spring Basket",
     CurrentValue = false,
     Callback = function(Value)
         basketToggle = Value
