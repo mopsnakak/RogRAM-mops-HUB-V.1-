@@ -1,6 +1,7 @@
- local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
- local ReplicatedStorage = game:GetService("ReplicatedStorage")
- local ByteNetUnreliable = ReplicatedStorage:WaitForChild("ByteNetUnreliable")
+local Players = game:GetService("Players")
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ByteNetUnreliable = ReplicatedStorage:WaitForChild("ByteNetUnreliable")
  local ByteNetReliable = ReplicatedStorage:WaitForChild("ByteNetReliable")
 
 
@@ -57,7 +58,7 @@ Tab:CreateToggle({
     end,
 })
 
- local GiftsTab = Window:CreateTab("Gifts")
+local GiftsTab = Window:CreateTab("Gifts")
 
 local pepeToggle = false
 GiftsTab:CreateToggle({
