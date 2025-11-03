@@ -7,7 +7,7 @@ local LocalPlayer = Players.LocalPlayer
 local Modules = ReplicatedStorage:WaitForChild("Modules")
 local market = require(Modules.Networking.Packets.market)
 
-local Window = Rayfield:CreateWindow({
+ local Window = Rayfield:CreateWindow({
    Name = "Mops v.BETA main window",
    Icon = 0,
    LoadingTitle = "Mops Hub v.BETA",
