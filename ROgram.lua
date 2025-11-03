@@ -1,11 +1,10 @@
-local Players = game:GetService("Players")
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ByteNetUnreliable = ReplicatedStorage:WaitForChild("ByteNetUnreliable")
+local ByteNetReliable = ReplicatedStorage:WaitForChild("ByteNetReliable")
+local Players = game:GetService("Players")
 
-
-
- local Window = Rayfield:CreateWindow({
+local Window = Rayfield:CreateWindow({
    Name = "Mops v.BETA main window",
    Icon = 0,
    LoadingTitle = "Mops Hub v.BETA",
@@ -41,7 +40,42 @@ local ByteNetUnreliable = ReplicatedStorage:WaitForChild("ByteNetUnreliable")
       Key = {"Hello"}
    }
 })
+local Window = Rayfield:CreateWindow({
+   Name = "Mops v.BETA main window",
+   Icon = 0,
+   LoadingTitle = "Mops Hub v.BETA",
+   LoadingSubtitle = "by Mops",
+   ShowText = "Mops Hub v.BETA",
+   Theme = "Default",
 
+   ToggleUIKeybind = "K",
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "Mops Hub v.BETA"
+   },
+
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
+   },
+
+   KeySystem = false,
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key",
+      SaveKey = true,
+      GrabKeyFromSite = false,
+      Key = {"Hello"}
+   }
+})
 local Window = Rayfield:CreateWindow({
    Name = "Mops v.BETA main window",
    Icon = 0,
