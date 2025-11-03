@@ -56,6 +56,7 @@ Tab:CreateToggle({
         end)
     end,
 })
+
 local GiftsTab = Window:CreateTab("Gifts")
 
 local pepeToggle = false
@@ -95,7 +96,8 @@ GiftsTab:CreateToggle({
         basketToggle = Value
         task.spawn(function()
             while basketToggle do
-                ByteNetReliable:FireServer(buffer.fromstring() ([[\9\1\0\0\0\0Spring Basket]])
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0
+\0Spring Basket"))
                 task.wait(0.05)
             end
         end)
