@@ -1,8 +1,11 @@
-
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ByteNetUnreliable = ReplicatedStorage:WaitForChild("ByteNetUnreliable")
 local ByteNetReliable = ReplicatedStorage:WaitForChild("ByteNetReliable")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Modules = ReplicatedStorage:WaitForChild("Modules")
+local market = require(Modules.Networking.Packets.market)
 
 local Window = Rayfield:CreateWindow({
    Name = "Mops v.BETA main window",
