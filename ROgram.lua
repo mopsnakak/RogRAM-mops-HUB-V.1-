@@ -56,3 +56,48 @@ Tab:CreateToggle({
         end)
     end,
 })
+local GiftsTab = Window:CreateTab("Gifts")
+
+local pepeToggle = false
+GiftsTab:CreateToggle({
+    Name = "Pepe spam buy",
+    CurrentValue = false,
+    Callback = function(Value)
+        pepeToggle = Value
+        task.spawn(function()
+            while pepeToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\5\1\0\0\0\4\0Pepe"))
+                task.wait(0.05)
+            end
+        end)
+    end,
+})
+
+local perfumeToggle = false
+GiftsTab:CreateToggle({
+    Name = "Perfume Bottle spam buy",
+    CurrentValue = false,
+    Callback = function(Value)
+        perfumeToggle = Value
+        task.spawn(function()
+            while perfumeToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\5\1\0\0\0\14\0Perfume Bottle"))
+                task.wait(0.05)
+            end
+        end)
+    end,
+})
+local basketToggle = false
+GiftsTab:CreateToggle({
+    Name = " spam buy Spring Basket ",
+    CurrentValue = false,
+    Callback = function(Value)
+        basketToggle = Value
+        task.spawn(function()
+            while basketToggle do
+                ByteNetReliable:FireServer(buffer.fromstring() ([[\9\1\0\0\0\0Spring Basket]])
+                task.wait(0.05)
+            end
+        end)
+    end,
+})  
