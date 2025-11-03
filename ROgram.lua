@@ -1,51 +1,59 @@
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-local Window = Rayfield:CreateWindow({
-   Name = "Mops Exploitp",
-   Icon = 0 , 
-   LoadingTitle = "Mops Exploit",
-   LoadingSubtitle = "by Mops",
-   ShowText = "Tgk richmops", -- for mobile users to unhide rayfield, change if you'd like
-   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+-- made by @chillguyidk
+-- credits to rayfield library devs + sigma spy
 
-   ToggleUIKeybind = "Wp", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ByteNetUnreliable = ReplicatedStorage:WaitForChild("ByteNetUnreliable")
+local ByteNetReliable = ReplicatedStorage:WaitForChild("ByteNetReliable")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Modules = ReplicatedStorage:WaitForChild("Modules")
+local market = require(Modules.Networking.Packets.market)
+
+
+local Window = Rayfield:CreateWindow({
+   Name = "Chill Guy Hub v.1",
+   Icon = 0,
+   LoadingTitle = "Chill Guy Hub v.1",
+   LoadingSubtitle = "by Chill Guy",
+   ShowText = "Chill Guy Hub v.1",
+   Theme = "Default",
+
+   ToggleUIKeybind = "K",
 
    DisableRayfieldPrompts = false,
-   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+   DisableBuildWarnings = false,
 
    ConfigurationSaving = {
       Enabled = true,
-      FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "Mops Hub"
+      FolderName = nil,
+      FileName = "Chill Guy Hub v.1"
    },
 
    Discord = {
-      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
-      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
-      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
    },
 
-   KeySystem = false, -- Set this to true to use our key system
+   KeySystem = false,
    KeySettings = {
       Title = "Untitled",
       Subtitle = "Key System",
-      Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
-      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key",
+      SaveKey = true,
+      GrabKeyFromSite = false,
+      Key = {"Hello"}
    }
 })
-Rayfield:Notify({
-   Title = "Notification Title",
-   Content = "Notification Content",
-   Duration = 6.5,
-   Image = "rewind",
-}) 
+
 local Tab = Window:CreateTab("Auto Click/Fast Click")
 
 local clicking = false
 Tab:CreateToggle({
-    Name = "Auto Click",
+    Name = "Auto Click (fixed)",
     CurrentValue = false,
     Callback = function(Value)
         clicking = Value
@@ -56,6 +64,32 @@ Tab:CreateToggle({
             end
         end)
     end,
+})
+
+local CasesTab = Window:CreateTab("Cases")
+
+CasesTab:CreateButton({
+    Name = "Startoviy Kapital (500 stars one)",
+    Callback = function()
+        local data = string.char(
+            23,0,9,0,               -- prefix
+            70,114,101,101,32,67,97,115,101, -- "Free Case"
+            1,0,0,0                 -- ending bytes
+        )
+        ByteNetReliable:FireServer(buffer.fromstring(data))
+    end
+})
+
+CasesTab:CreateButton({
+    Name = "Rich Case (Limited Case)",
+    Callback = function()
+        local data = string.char(
+            23,0,12,0,               -- header
+            76,105,109,105,116,101,100,32,67,97,115,101,  -- "Limited Case"
+            1,0,0,0                  -- footer
+        )
+        ByteNetReliable:FireServer(buffer.fromstring(data))
+    end
 })
 
 local GiftsTab = Window:CreateTab("Gifts")
@@ -88,23 +122,6 @@ GiftsTab:CreateToggle({
             end
         end)
     end,
-})
-
-local basketToggle = false
-GiftsTab:CreateToggle({
-    Name = "spam buy Spring Basket",
-    CurrentValue = false,
-    Callback = function(Value)
-        basketToggle = Value
-        task.spawn(function()
-            while basketToggle do
-                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\0Spring Basket"))
-                task.wait(0.05)
-            end
-        end)
-    end,
-})
-
 })
 
 local HeartToggle = false
