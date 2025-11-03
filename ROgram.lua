@@ -1,5 +1,5 @@
 -- made by @chillguyidk
--- credits to rayfield library devs + sigma spy
+-- credits to rayfield library devs + sigma sp
 
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
