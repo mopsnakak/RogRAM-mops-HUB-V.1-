@@ -2,7 +2,7 @@ local Players = game:GetService("Players")
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ByteNetUnreliable = ReplicatedStorage:WaitForChild("ByteNetUnreliable")
- local ByteNetReliable = ReplicatedStorage:WaitForChild("ByteNetReliable")
+
 
 
  local Window = Rayfield:CreateWindow({
