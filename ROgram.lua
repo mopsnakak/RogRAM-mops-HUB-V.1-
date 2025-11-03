@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
    Name = "Mops Exploitp",
-   Icon = 0
+   Icon = 0 , 
    LoadingTitle = "Mops Exploit",
    LoadingSubtitle = "by Mops",
    ShowText = "Tgk richmops", -- for mobile users to unhide rayfield, change if you'd like
@@ -104,3 +104,127 @@ GiftsTab:CreateToggle({
         end)
     end,
 })
+
+})
+
+local HeartToggle = false
+GiftsTab:CreateToggle({
+    Name = "Heart spam buy",
+    CurrentValue = false,
+    Callback = function(Value)
+        HeartToggle = Value
+        task.spawn(function()
+            while basketToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\5\0Heart"))
+                task.wait(0.05)
+            end
+        end)
+    end,
+}) 
+
+local KeyToggle = false
+GiftsTab:CreateToggle({
+    Name = "InputKey spam buy",
+    CurrentValue = false,
+    Callback = function(Value)
+        KeyToggle = Value
+        task.spawn(function()
+            while basketToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\9\0Input Key"))
+                task.wait(0.05)
+            end
+        end)
+    end,
+}) 
+
+local popToggle = false
+GiftsTab:CreateToggle({
+    Name = "LolPop spam buy",
+    CurrentValue = false,
+    Callback = function(Value)
+        popToggle = Value
+        task.spawn(function()
+            while basketToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\6\0LolPop"))
+                task.wait(0.05)
+            end
+        end)
+    end,
+}) 
+
+local EyeToggle = false
+GiftsTab:CreateToggle({
+    Name = "Eye spam buy",
+    CurrentValue = false,
+    Callback = function(Value)
+        EyeToggle = Value
+        task.spawn(function()
+            while basketToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\3\0Eye"))
+                task.wait(0.05)
+            end
+        end)
+    end,
+}) 
+
+
+local RayderToggle = false
+GiftsTab:CreateToggle({
+    Name = "Low Rayder spam buy",
+    CurrentValue = false,
+    Callback = function(Value)
+        RayderToggle = Value
+        task.spawn(function()
+            while basketToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\9\0Low Rider"))
+                task.wait(0.05)
+            end
+        end)
+    end,
+}) 
+
+local CakeToggle = false
+GiftsTab:CreateToggle({
+    Name = "Cake spam buy",
+    CurrentValue = false,
+    Callback = function(Value)
+        CakeToggle = Value
+        task.spawn(function()
+            while basketToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\0Homemade Cake")
+                task.wait(0.05)
+            end
+        end)
+    end,
+}) 
+
+
+local BearToggle = false
+GiftsTab:CreateToggle({
+    Name = "Bear spam buy",
+    CurrentValue = false,
+    Callback = function(Value)
+        BearToggle = Value
+        task.spawn(function()
+            while basketToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\8\0Toy Bear")
+                task.wait(0.05)
+            end
+        end)
+    end,
+}) 
+
+local dollToggle = false
+GiftsTab:CreateToggle({
+    Name = "Voodoo Doll spam buy",
+    CurrentValue = false,
+    Callback = function(Value)
+        dollToggle = Value
+        task.spawn(function()
+            while basketToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\11\0Voodoo Doll")
+                task.wait(0.05)
+            end
+        end)
+    end,
+}) 
