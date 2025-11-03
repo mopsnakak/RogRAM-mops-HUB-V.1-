@@ -127,3 +127,17 @@ GiftsTab:CreateToggle({
         end)
     end,
 })
+local basketToggle = false
+GiftsTab:CreateToggle({
+    Name = "spam buy Spring Basket",
+    CurrentValue = false,
+    Callback = function(Value)
+        basketToggle = Value
+        task.spawn(function()
+            while basketToggle do
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\0Spring Basket"))
+                task.wait(0.05)
+            end
+        end)
+    end,
+})
