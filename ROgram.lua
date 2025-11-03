@@ -1,10 +1,10 @@
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local ByteNetUnreliable = ReplicatedStorage:WaitForChild("ByteNetUnreliable")
-local ByteNetReliable = ReplicatedStorage:WaitForChild("ByteNetReliable")
+ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+ local ByteNetUnreliable = ReplicatedStorage:WaitForChild("ByteNetUnreliable")
+ local ByteNetReliable = ReplicatedStorage:WaitForChild("ByteNetReliable")
 
 
-local Window = Rayfield:CreateWindow({
+ local Window = Rayfield:CreateWindow({
    Name = "Mops v.BETA main window",
    Icon = 0,
    LoadingTitle = "Mops Hub v.BETA",
@@ -40,7 +40,7 @@ local Window = Rayfield:CreateWindow({
       Key = {"Hello"}
    }
 })
-local Tab = Window:CreateTab("Auto Click/Fast Click")
+ ocal Tab = Window:CreateTab("Auto Click/Fast Click")
 
 local clicking = false
 Tab:CreateToggle({
@@ -57,7 +57,7 @@ Tab:CreateToggle({
     end,
 })
 
-local GiftsTab = Window:CreateTab("Gifts")
+ local GiftsTab = Window:CreateTab("Gifts")
 
 local pepeToggle = false
 GiftsTab:CreateToggle({
