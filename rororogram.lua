@@ -116,7 +116,7 @@ GiftsTab:CreateToggle({
     end,
 })
 
-local HeartToggle = false
+local heartToggle = false
 GiftsTab:CreateToggle({
     Name = "Heart spam buy",
     CurrentValue = false,
@@ -131,7 +131,7 @@ GiftsTab:CreateToggle({
     end,
 }) 
 
-local KeyToggle = false
+local keyToggle = false
 GiftsTab:CreateToggle({
     Name = "InputKey spam buy",
     CurrentValue = false,
@@ -161,7 +161,7 @@ GiftsTab:CreateToggle({
     end,
 }) 
 
-local EyeToggle = false
+local eyeToggle = false
 GiftsTab:CreateToggle({
     Name = "Eye spam buy",
     CurrentValue = false,
@@ -177,7 +177,7 @@ GiftsTab:CreateToggle({
 }) 
 
 
-local RayderToggle = false
+local rayderToggle = false
 GiftsTab:CreateToggle({
     Name = "Low Rayder spam buy",
     CurrentValue = false,
@@ -192,7 +192,7 @@ GiftsTab:CreateToggle({
     end,
 }) 
 
-local CakeToggle = false
+local cakeToggle = false
 GiftsTab:CreateToggle({
     Name = "Cake spam buy",
     CurrentValue = false,
@@ -208,7 +208,7 @@ GiftsTab:CreateToggle({
 }) 
 
 
-local BearToggle = false
+local bearToggle = false
 GiftsTab:CreateToggle({
     Name = "Bear spam buy",
     CurrentValue = false,
