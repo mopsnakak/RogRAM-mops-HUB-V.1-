@@ -208,7 +208,7 @@ GiftsTab:CreateToggle({
         CakeToggle = Value
         task.spawn(function()
             while basketToggle do
-                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\0Homemade Cake")
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\0Homemade Cake"))
                 task.wait(0.05)
             end
         end)
@@ -224,7 +224,7 @@ GiftsTab:CreateToggle({
         BearToggle = Value
         task.spawn(function()
             while basketToggle do
-                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\8\0Toy Bear")
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\8\0Toy Bear"))
                 task.wait(0.05)
             end
         end)
@@ -239,7 +239,7 @@ GiftsTab:CreateToggle({
         dollToggle = Value
         task.spawn(function()
             while basketToggle do
-                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\11\0Voodoo Doll")
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\11\0Voodoo Doll"))
                 task.wait(0.05)
             end
         end)
