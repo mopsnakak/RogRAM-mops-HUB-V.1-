@@ -1,7 +1,14 @@
+-- исправлено by @chillguyidk
+-- credits to rayfield library devs + sigma sp
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ByteNetUnreliable = ReplicatedStorage:WaitForChild("ByteNetUnreliable")
+local ByteNetReliable = ReplicatedStorage:WaitForChild("ByteNetReliable")
+local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Modules = ReplicatedStorage:WaitForChild("Modules")
 local market = require(Modules.Networking.Packets.market)
-
 
 local Window = Rayfield:CreateWindow({
    Name = "Chill Guy Hub v.1",
@@ -39,7 +46,6 @@ local Window = Rayfield:CreateWindow({
       Key = {"Hello"}
    }
 })
-
 
 local Tab = Window:CreateTab("Auto Click/Fast Click")
 
@@ -116,29 +122,28 @@ GiftsTab:CreateToggle({
     end,
 })
 
-local heartToggle = false
+local HeartToggle = false
 GiftsTab:CreateToggle({
     Name = "Heart spam buy",
     CurrentValue = false,
     Callback = function(Value)
         HeartToggle = Value
         task.spawn(function()
-            while basketToggle do
+            while HeartToggle do  -- Исправлено: было basketToggle
                 ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\5\0Heart"))
                 task.wait(0.05)
             end
         end)
     end,
-}) 
-
-local keyToggle = false
+})
+local KeyToggle = false
 GiftsTab:CreateToggle({
     Name = "InputKey spam buy",
     CurrentValue = false,
     Callback = function(Value)
         KeyToggle = Value
         task.spawn(function()
-            while basketToggle do
+            while KeyToggle do  -- Исправлено: было basketToggle
                 ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\9\0Input Key"))
                 task.wait(0.05)
             end
@@ -153,7 +158,7 @@ GiftsTab:CreateToggle({
     Callback = function(Value)
         popToggle = Value
         task.spawn(function()
-            while basketToggle do
+            while popToggle do  -- Исправлено: было basketToggle
                 ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\6\0LolPop"))
                 task.wait(0.05)
             end
@@ -161,14 +166,14 @@ GiftsTab:CreateToggle({
     end,
 }) 
 
-local eyeToggle = false
+local EyeToggle = false
 GiftsTab:CreateToggle({
     Name = "Eye spam buy",
     CurrentValue = false,
     Callback = function(Value)
         EyeToggle = Value
         task.spawn(function()
-            while basketToggle do
+            while EyeToggle do  -- Исправлено: было basketToggle
                 ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\3\0Eye"))
                 task.wait(0.05)
             end
@@ -176,15 +181,14 @@ GiftsTab:CreateToggle({
     end,
 }) 
 
-
-local rayderToggle = false
+local RiderToggle = false
 GiftsTab:CreateToggle({
-    Name = "Low Rayder spam buy",
+    Name = "Low Rider spam buy",
     CurrentValue = false,
     Callback = function(Value)
         RayderToggle = Value
         task.spawn(function()
-            while basketToggle do
+            while RiderToggle do  -- Исправлено: было basketToggle
                 ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\9\0Low Rider"))
                 task.wait(0.05)
             end
@@ -192,31 +196,30 @@ GiftsTab:CreateToggle({
     end,
 }) 
 
-local cakeToggle = false
+local CakeToggle = false
 GiftsTab:CreateToggle({
     Name = "Cake spam buy",
     CurrentValue = false,
     Callback = function(Value)
         CakeToggle = Value
         task.spawn(function()
-            while basketToggle do
-                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\0Homemade Cake"))
+            while CakeToggle do  -- Исправлено: было basketToggle
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\13\0Homemade Cake"))  -- Исправлена длина строки и добавлена закрывающая кавычка
                 task.wait(0.05)
             end
         end)
     end,
 }) 
 
-
-local bearToggle = false
+local BearToggle = false
 GiftsTab:CreateToggle({
     Name = "Bear spam buy",
     CurrentValue = false,
     Callback = function(Value)
         BearToggle = Value
         task.spawn(function()
-            while basketToggle do
-                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\8\0Toy Bear"))
+            while BearToggle do  -- Исправлено: было basketToggle
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\8\0Toy Bear"))  -- Добавлена закрывающая кавычка
                 task.wait(0.05)
             end
         end)
@@ -230,10 +233,10 @@ GiftsTab:CreateToggle({
     Callback = function(Value)
         dollToggle = Value
         task.spawn(function()
-            while basketToggle do
-                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\11\0Voodoo Doll"))
+            while dollToggle do  -- Исправлено: было basketToggle
+                ByteNetReliable:FireServer(buffer.fromstring("\9\1\0\0\0\11\0Voodoo Doll"))  -- Добавлена закрывающая кавычка
                 task.wait(0.05)
             end
         end)
     end,
-}) 
+})
